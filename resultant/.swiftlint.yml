@@ -1,0 +1,62 @@
+disabled_rules: # rule identifiers to exclude from running
+#  - colon
+#  - comma
+  - control_statement
+  - trailing_whitespace
+  - force_cast
+  - cyclomatic_complexity
+  - valid_docs
+  - missing_docs
+  - conditional_binding_cascade
+  - todo
+opt_in_rules: # some rules are only opt-in
+#  - empty_count
+  - missing_docs
+  - cyclomatic_complexity
+  # Find all the available rules by running:
+  # swiftlint rules
+whitelist_rules:
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Carthage
+  - Pods
+  - Source/ExcludedFolder
+  - Source/ExcludedFile.swift
+# configurable rules can be customized from this configuration file
+# binary rules can set their severity level
+# force_cast: warning # implicitly
+force_try:
+  severity: warning # explicitly
+# rules that have both warning and error levels, can set just the warning level
+# implicitly
+line_length: 400
+# they can set both implicitly with an array
+type_body_length:
+  - 1400 # warning
+  - 2000 # error
+function_body_length:
+  - 400 # warning
+  - 1500 # error
+# or they can set both explicitly
+file_length:
+  warning: 2000
+  error: 4000
+# naming rules can set warnings/errors for min_length and max_length
+# additionally they can set excluded names
+type_name:
+  min_length: 3 # only warning
+  max_length: # warning and error
+    warning: 60
+    error: 80
+  excluded: iPhone # excluded via string
+variable_name:
+  min_length: 2 # only warning
+  max_length: # warning and error
+    warning: 50
+    error: 80
+function_parameter_count:
+  warning: 7
+  error: 10
+#cyclomatic_complexity:
+#  warning: 10
+#  error: 15
+reporter: "xcode" # reporter type (xcode, json, csv, checkstyle)

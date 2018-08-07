@@ -117,9 +117,8 @@ class APIManager: NSObject {
         }
         return jsonDictionary
     }
-    
-    
 }
+
 extension APIManager: URLSessionDelegate, URLSessionTaskDelegate, URLSessionDataDelegate, URLSessionDownloadDelegate {
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {}
     
